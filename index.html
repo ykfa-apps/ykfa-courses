@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YKFA Combat Sports &amp; Martial Arts Certification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f4;--surface:#f1ebe5;--text:#1c1715;--muted:#5c534d;--line:#ddd3ca;
+  --accent:#a30f27;--accent-text:#ffffff;--gold:#7a5c06;
+  --display:"Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#120f0e;--surface:#1c1716;--text:#f2ebe4;--muted:#b3a79e;--line:#3a302d;
+    --accent:#d92b45;--accent-text:#ffffff;--gold:#d4a935;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#120f0e;--surface:#1c1716;--text:#f2ebe4;--muted:#b3a79e;--line:#3a302d;
+  --accent:#d92b45;--accent-text:#ffffff;--gold:#d4a935;color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;margin:0 0 .6em;letter-spacing:.01em}
+h1{font-size:clamp(2.3rem,7vw,4.2rem)}
+h2{font-size:clamp(1.7rem,4.5vw,2.5rem)}
+h3{font-size:1.3rem;font-weight:500}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+.wrap{width:min(100% - 2.5rem,68rem);margin-inline:auto}
+section{padding-block:3.5rem}
+.btn{display:inline-block;padding:.85rem 1.6rem;background:var(--accent);color:var(--accent-text);font-weight:600;text-decoration:none;border-radius:2px;border:2px solid var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* hero is always dark: it is the brand */
+.hero{background:#120f0e;color:#f2ebe4;position:relative;overflow:hidden;padding-block:4rem 4.5rem}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60rem 30rem at 85% 10%,rgba(163,15,39,.55),transparent 70%)}
+.hero .wrap{position:relative;display:grid;gap:2.5rem;grid-template-columns:1fr}
+.hero p.lead{font-size:1.2rem;color:#d9cfc6}
+.hero .gold{color:#d4a935;font-family:var(--display);font-size:1.05rem;letter-spacing:.04em;margin-bottom:1rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.shield{width:min(70%,17rem);justify-self:center}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.5fr 1fr;align-items:center}}
+
+.band{background:var(--surface)}
+.grid{display:grid;gap:1.5rem}
+@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
+.item{border-left:3px solid var(--accent);padding-left:1rem}
+.item p{margin:0;color:var(--muted)}
+
+.mods{columns:1;column-gap:2.5rem;padding:0;margin:0;list-style:none}
+@media(min-width:760px){.mods{columns:2}}
+.mods li{break-inside:avoid;padding:.55rem 0;border-bottom:1px solid var(--line)}
+.mods strong{font-weight:600}
+.mods span{display:block;color:var(--muted);font-size:.95rem}
+
+.plans{display:grid;gap:1.2rem}
+@media(min-width:820px){.plans{grid-template-columns:repeat(4,1fr)}}
+.plan{border:1px solid var(--line);padding:1.4rem 1.2rem;background:var(--bg);display:flex;flex-direction:column}
+.plan.main{border:2px solid var(--accent)}
+.plan .price{font-family:var(--display);font-size:2.2rem;font-weight:700;margin:.3rem 0}
+.plan .meta{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+.plan ul{padding-left:1.1rem;margin:0 0 1.2rem;color:var(--muted);font-size:.97rem}
+.plan .btn{margin-top:auto;text-align:center}
+
+.steps{counter-reset:s;padding:0;list-style:none;display:grid;gap:1rem}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{counter-increment:s;border-top:3px solid var(--gold);padding-top:.8rem}
+.steps li::before{content:"Step " counter(s);display:block;font-family:var(--display);color:var(--gold)}
+
+details{border-bottom:1px solid var(--line);padding:.9rem 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:.7rem 0 0;color:var(--muted)}
+.note{font-size:.9rem;color:var(--muted)}
+footer{padding-block:2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="gold">YKFA Combat Federation</div>
+      <h1>Start your own martial arts academy, and train to run it properly.</h1>
+      <p class="lead">A 3-month certification in combat sports, martial arts and fitness training, taught by the YKFA head coach and a team of specialist coaches. Learn the rules, the techniques and the business of running a gym or academy.</p>
+      <div class="actions">
+        <a class="btn" href="#enquire">Enquire about the next batch</a>
+        <a class="btn ghost" href="#syllabus">See the syllabus</a>
+        <a class="btn ghost" href="portal/">Student login</a>
+      </div>
+    </div>
+    <svg class="shield" viewBox="0 0 200 230" role="img" aria-label="YKFA hexagonal shield emblem">
+      <polygon points="100,8 188,58 188,168 100,222 12,168 12,58" fill="#1c1716" stroke="#d4a935" stroke-width="5"/>
+      <polygon points="100,26 172,67 172,159 100,204 28,159 28,67" fill="none" stroke="#a30f27" stroke-width="4"/>
+      <text x="100" y="128" text-anchor="middle" font-family="Oswald,Impact,sans-serif" font-size="54" font-weight="700" fill="#f2ebe4" letter-spacing="2">YKFA</text>
+      <text x="100" y="158" text-anchor="middle" font-family="Source Sans 3,Arial,sans-serif" font-size="13" fill="#d4a935" letter-spacing="3">COMBAT FEDERATION</text>
+    </svg>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>Who this course is for</h2>
+    <div class="grid three">
+      <div class="item"><h3>Future academy owners</h3><p>You want to open a martial arts school, combat sports club or studio gym and need the technical and business foundations.</p></div>
+      <div class="item"><h3>Coaches and instructors</h3><p>You already teach and want a structured, recognised certificate along with better class planning and safety practice.</p></div>
+      <div class="item"><h3>Athletes and fitness trainers</h3><p>You compete or train clients and want the rules, officiating knowledge and coaching skills to move into teaching.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="syllabus">
+  <div class="wrap">
+    <h2>What you will learn</h2>
+    <p>Thirteen modules. Each ends with a test, and every sport module includes a practical assessment by your coach.</p>
+    <ul class="mods">
+      <li><strong>Foundations</strong><span>Etiquette, warm-up, stance, movement, safety basics</span></li>
+      <li><strong>Boxing</strong><span>Technique, ring, scoring, fouls, officials</span></li>
+      <li><strong>Karate and kumite</strong><span>Kihon, kata, tatami area, scoring, penalties</span></li>
+      <li><strong>Kickboxing</strong><span>Formats, equipment, rules, combinations</span></li>
+      <li><strong>Muay Thai</strong><span>Eight limbs, clinch, traditions, scoring principles</span></li>
+      <li><strong>Wrestling</strong><span>Takedowns, mat area, scoring, pins, passivity</span></li>
+      <li><strong>Judo</strong><span>Breakfalls, throws, grips, ippon and penalties</span></li>
+      <li><strong>MMA</strong><span>Striking, grappling, unified rules, fouls, fight safety</span></li>
+      <li><strong>Traditional weapons</strong><span>Introduction to bo, nunchaku and tonfa, with safety first</span></li>
+      <li><strong>Fitness and conditioning</strong><span>Programme design, strength, mobility, recovery</span></li>
+      <li><strong>Safety and first aid</strong><span>Injuries, concussion, safeguarding children</span></li>
+      <li><strong>Coaching skills</strong><span>Lesson plans, feedback, grading, competition prep</span></li>
+      <li><strong>Running an academy</strong><span>Registration, pricing, marketing, staff, records</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <h2>Choose your programme</h2>
+    <div class="plans">
+      <div class="plan main">
+        <h3>Beginners Certification</h3>
+        <div class="price">₹15,000</div>
+        <div class="meta">3 months, 3 classes a week</div>
+        <ul><li>For complete beginners</li><li>Offline classes at YKFA</li><li>Theory, practical and final exam</li></ul>
+        <a class="btn" href="#enquire">Enquire</a>
+      </div>
+      <div class="plan">
+        <h3>Athlete Certification</h3>
+        <div class="price">₹12,000</div>
+        <div class="meta">3 months, weekend classes</div>
+        <ul><li>For combat sports athletes</li><li>Two days each weekend</li><li>Theory, practical and final exam</li></ul>
+        <a class="btn" href="#enquire">Enquire</a>
+      </div>
+      <div class="plan">
+        <h3>Certification + Fitness</h3>
+        <div class="price">₹20,000</div>
+        <div class="meta">Sports training at the gym</div>
+        <ul><li>Everything in the certification</li><li>Gym sports training</li><li>General fitness training</li></ul>
+        <a class="btn" href="#enquire">Enquire</a>
+      </div>
+      <div class="plan">
+        <h3>Online Certification</h3>
+        <div class="price">₹7,999</div>
+        <div class="meta">2 months, 3 classes a week</div>
+        <ul><li>Live online classes and student portal</li><li>Online tests and certificate</li><li>Live practical check before certification</li></ul>
+        <a class="btn" href="#enquire">Enquire</a>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1rem">Fees are subject to confirmation for each batch. Ask about instalments and group enrolment.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>How certification works</h2>
+    <ol class="steps">
+      <li><h3>Join</h3><p>Receive your roll number and a 6-digit joining code, then create your login.</p></li>
+      <li><h3>Learn</h3><p>Attend classes, read the handbook and tick off topics in your student portal.</p></li>
+      <li><h3>Be assessed</h3><p>Module tests, coach-marked practicals and a viva or live practical check.</p></li>
+      <li><h3>Certify</h3><p>Pass and receive a YKFA Combat Federation certificate with a unique number to verify.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid two">
+    <div>
+      <h2>Your student portal</h2>
+      <p>Everything in one private login: your assigned course content, attendance and leave requests, progress tracker, mock tests and results.</p>
+      <p class="note">Tests are timed and randomised, and the portal records activity during exams to keep results fair.</p>
+    </div>
+    <div>
+      <h2>Taught by working coaches</h2>
+      <p>Led by the YKFA head coach, with specialist coaches for boxing, wrestling, karate, MMA, Muay Thai and fitness. You learn from people who coach every week.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Do I need any experience?</summary><p>No. The beginner programme starts from the basics. Athletes can join the weekend programme.</p></details>
+    <details><summary>Is the online certificate the same as the offline one?</summary><p>The online programme covers the same theory. Online students complete a live practical check before the certificate is issued.</p></details>
+    <details><summary>Will this make me a licensed coach?</summary><p>This is a YKFA Combat Federation certificate. Rules for opening academies and coaching licences differ by place, and the course teaches you what to check.</p></details>
+    <details><summary>Can I use the content to teach others?</summary><p>Course material is for enrolled students only and may not be shared or copied. Every page in the portal carries the student's name.</p></details>
+    <details><summary>What do I need to bring to classes?</summary><p>Comfortable training clothes, water and a towel. Bring gloves and a mouthguard for striking modules, or ask us for the list.</p></details>
+  </div>
+</section>
+
+<section id="enquire">
+  <div class="wrap">
+    <h2>Enquire about the next batch</h2>
+    <p>Call or message YKFA to check batch dates, fees and seats, and to book a free intro visit.</p>
+    <p><a class="btn" href="tel:+910000000000">Call YKFA</a></p>
+      </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><a href="verify.html">Verify a certificate</a> · <a href="portal/">Student login</a><br>YKFA Combat Federation. Certificates carry a unique number and the YKFA registration number once registration is complete.</div>
+</footer>
+</body>
+</html>
